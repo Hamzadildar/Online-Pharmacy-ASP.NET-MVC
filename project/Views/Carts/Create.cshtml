@@ -1,0 +1,113 @@
+﻿@model project.Models.Cart
+
+@{
+    ViewBag.Title = "Create";
+}
+
+    <div class="mytext">
+
+        <h2 class="mytext">Create</h2>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Cart</h4>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.M_Name, htmlAttributes: new { @class = "control-label mytext col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.U_Name, new { htmlAttributes = new { @class = "form-control",  } })*@
+                <input class="form-control" type="text" name="name" value="@ViewBag.name" />
+                @Html.ValidationMessageFor(model => model.M_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.U_Name, htmlAttributes: new { @class = "control-label mytext col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.U_Name, new { htmlAttributes = new { @class = "form-control", } })
+                @Html.ValidationMessageFor(model => model.U_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.U_Contact, htmlAttributes: new { @class = "control-label mytext col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.U_Contact, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.U_Contact, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.U_Address, htmlAttributes: new { @class = "control-label mytext col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.U_Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.U_Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.M_Price, htmlAttributes: new { @class = "control-label mytext col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.U_Name, new { htmlAttributes = new { @class = "form-control",  } })*@
+                <input class="form-control" type="text" name="name" value="@ViewBag.price" />
+                @Html.ValidationMessageFor(model => model.M_Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TotalBill, htmlAttributes: new { @class = "control-label mytext col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TotalBill, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalBill, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrderDate, htmlAttributes: new { @class = "control-label mytext col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OrderDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrderDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PaymentMethod, htmlAttributes: new { @class = "control-label mytext col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PaymentMethod, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PaymentMethod, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+    </div>

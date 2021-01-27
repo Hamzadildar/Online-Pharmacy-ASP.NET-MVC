@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Pharmacy</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+    <link rel="icon" type="image/png" href="~/images/icons/favicon.ico" />
+
+    <link href="~/fonts/material-icon/css/material-design-iconic-font.min.css" rel="stylesheet" />
+    <!-- Main css -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <style>
+        .mytext{
+            color:white;
+        }
+    </style>
+
+</head>
+<body style="padding-bottom:0px;">
+
+
+
+    <div class="container-fluid">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+
+                            <li>@Html.ActionLink("Home", "Index", "Admins")</li>
+                            <li>@Html.ActionLink("Menu", "Index", "Medicines")</li>
+                            <li>@Html.ActionLink("About", "Create", "Admins")</li>
+                            <li>@Html.ActionLink("Contact", "Create", "Contacts")</li>
+                            <li>@Html.ActionLink("Cart", "Create", "Carts")</li>
+
+                            <li>@Html.ActionLink("Log In", "Create", "Logins")</li>
+                            <li>@Html.ActionLink("Sign Up", "Create", "SignUps")</li>
+
+
+
+
+
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-white container-fluid body-content " style="height: auto;min-height:90vh; background-image: url('../../images/medicine.jpg') ; background-size:cover; color:white";
+>
+        @RenderBody()
+        <hr />
+        
+    </div>
+
+
+    <div class="row bg-secondary" style="background-color:gray;">
+        <div class="col-lg-9"></div>
+
+        <div class="col-lg-3" >
+            <footer style="">
+
+                <font color="black">&copy; @DateTime.Now.Year - Developed by <b>Hamza Dildar</b></font>
+                <img src="~/images/smiley.gif" />
+            </footer>
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>

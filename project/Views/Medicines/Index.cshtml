@@ -1,0 +1,98 @@
+﻿@model IEnumerable<project.Models.Medicine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="mytext">Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.M_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M_Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M_Potency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M_Details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.M_Price)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.M_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.M_Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.M_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.M_Potency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.M_Details)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.M_Price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+
+
+
+
+@foreach (var item in Model)
+{
+<div class="col-lg-3 pb-3">
+
+    <div class="card pb-5" style="margin-bottom:30px;">
+            <img src="../Content/img/@Html.DisplayFor(modelItem => item.Image)"  style="width:200px;height:200px;">
+
+
+            <div class="card-body">
+                <h3 class="card-title">@Html.DisplayFor(modelItem => item.M_Name)</h3>
+                <h4 class="card-title">PKR-@Html.DisplayFor(modelItem => item.M_Price)</h4>
+                @*<p class="card-text">@Html.DisplayFor(modelItem => item.M_Type)</p>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.M_Potency)</p>*@
+                <p class="card-text">@Html.DisplayFor(modelItem => item.M_Details)</p>
+
+                <a href="/carts/create/@item.id" class="btn btn-primary">Add to Cart</a>
+            </div>
+
+
+        </div>
+
+</div>
+
+}
